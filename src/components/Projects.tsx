@@ -36,7 +36,7 @@ export default function Projects() {
             >
               <div className="relative overflow-hidden">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.image}
                   alt={project.title}
                   className="h-48 w-full object-scale-down transition-transform duration-300 group-hover:scale-110"
                   loading="lazy"
