@@ -31,7 +31,7 @@ export default function Skills() {
           variants={containerVariants}
           initial="hidden"
           whileInView={"visible"}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="grid grid-cols-2 gap-6 md:grid-cols-3"
         >
           {skills.map((skill, index) => (
