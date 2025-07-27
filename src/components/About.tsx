@@ -1,6 +1,7 @@
 import { Code, Database, Globe } from "lucide-react";
-import { Card, CardContent } from "./ui/card";
+import { motion } from "motion/react";
 import { Badge } from "./ui/badge";
+import { Card, CardContent } from "./ui/card";
 
 export default function About() {
   return (
@@ -13,7 +14,12 @@ export default function About() {
         </h2>
 
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+          >
             <p className="mb-6 text-lg leading-relaxed text-gray-300">
               I'm a passionate Full-Stack Developer with a B.Sc. in Software
               Engineering from Braude College. I specialize in React, Next.js,
@@ -50,9 +56,15 @@ export default function About() {
                 Full-Stack Solutions
               </Badge>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-xl" />
             <Card className="relative border-gray-700 bg-gray-800/50">
               <CardContent className="p-8">
@@ -79,7 +91,7 @@ export default function About() {
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

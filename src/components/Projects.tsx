@@ -1,14 +1,24 @@
 import { ExternalLink, Github } from "lucide-react";
+import { motion } from "motion/react";
 import projects from "../lib/projectList";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Projects() {
   const handleGithubRepo = (url: string) => {
@@ -28,11 +38,19 @@ export default function Projects() {
           </span>
         </h2>
 
-        <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView={"visible"}
+          viewport={{ once: true, amount: 0.3 }}
+          className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3"
+        >
           {projects.map((project, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="group overflow-hidden border-gray-700 bg-gray-800/50 transition-all duration-300 hover:border-blue-500/50"
+              variants={itemVariants}
+              whileHover={{ border: "1px solid purple" }}
+              className="group overflow-hidden rounded-lg border-gray-700 bg-gray-800/50 py-4 transition-all duration-300"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -88,9 +106,9 @@ export default function Projects() {
                   </Button>
                 </div>
               </CardContent>
-            </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

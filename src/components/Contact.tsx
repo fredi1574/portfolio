@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "motion/react";
 import { Button } from "./ui/button";
 
 export default function Contact() {
@@ -15,24 +16,49 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-gray-900/50 px-4 py-20">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.8 }}
+      id="contact"
+      className="bg-gray-900/50 px-4 py-20"
+    >
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="mb-8 text-4xl font-bold">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="mb-8 text-4xl font-bold"
+        >
           <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             Let's Work Together
           </span>
-        </h2>
+        </motion.h2>
 
-        <p className="mx-auto mb-12 max-w-2xl text-xl text-gray-300">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="mx-auto mb-12 max-w-2xl text-xl text-gray-300"
+        >
           I'm actively seeking a full-time Frontend or Full-Stack role. Let's
           connect!
-        </p>
+        </motion.p>
 
-        <div className="flex flex-col justify-center gap-6 sm:flex-row">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="flex flex-col justify-center gap-6 sm:flex-row"
+        >
           <Button
             onClick={handleEmail}
             size="lg"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 transition-colors hover:from-blue-800 hover:to-purple-800"
           >
             <Mail className="mr-2 h-5 w-5" />
             Send Email
@@ -55,8 +81,8 @@ export default function Contact() {
             <Github className="mr-2 h-5 w-5" />
             GitHub Profile
           </Button>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

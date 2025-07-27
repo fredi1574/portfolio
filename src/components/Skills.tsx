@@ -1,5 +1,21 @@
+import { motion } from "motion/react";
 import skills from "../lib/skillsList";
-import { Card, CardContent } from "./ui/card";
+import { CardContent } from "./ui/card";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Skills() {
   return (
@@ -11,11 +27,19 @@ export default function Skills() {
           </span>
         </h2>
 
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView={"visible"}
+          viewport={{ once: true, amount: 0.9 }}
+          className="grid grid-cols-2 gap-6 md:grid-cols-3"
+        >
           {skills.map((skill, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="group border-gray-700 bg-gray-800/50 transition-all duration-300 hover:border-fuchsia-500/70"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, border: "1px solid fuchsia" }}
+              className="group rounded-lg border-gray-700 bg-gray-800/50 transition-all duration-300"
             >
               <CardContent className="p-6 text-center">
                 <div className="mb-3 text-4xl transition-transform duration-300 group-hover:scale-130">
@@ -24,9 +48,9 @@ export default function Skills() {
                 <h3 className="mb-1 font-semibold text-white">{skill.name}</h3>
                 <p className="text-sm text-gray-400">{skill.category}</p>
               </CardContent>
-            </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

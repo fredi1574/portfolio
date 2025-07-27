@@ -1,4 +1,5 @@
-import { Mail, Github, ChevronDown } from "lucide-react";
+import { ChevronDown, Github, Mail } from "lucide-react";
+import { motion } from "motion/react";
 import { Button } from "./ui/button";
 
 export default function HeroSection() {
@@ -7,26 +8,39 @@ export default function HeroSection() {
   };
 
   return (
-    <section
+    <motion.section
       id="top"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
     >
       <div className="absolute inset-0 bg-radial-[at_25%_25%] from-blue-300/30 to-purple-700/40" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-        <div className="mb-8">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 150 }}
+          className="mb-8"
+        >
           <div className="mx-auto mb-6 h-32 w-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
             <div className="flex h-full w-full items-center justify-center rounded-full bg-gray-900">
               <span className="text-4xl font-bold">FB</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <h1 className="mb-6 text-5xl font-bold md:text-7xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="mb-6 text-5xl font-bold md:text-7xl"
+        >
           <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent">
             Fredi Bulshtein
           </span>
-        </h1>
+        </motion.h1>
 
         <p className="mb-4 text-xl text-gray-300 md:text-2xl">
           Full-Stack Developer
@@ -60,6 +74,6 @@ export default function HeroSection() {
           <ChevronDown className="mx-auto h-8 w-8 animate-bounce text-gray-400" />
         </a>
       </div>
-    </section>
+    </motion.section>
   );
 }
