@@ -70,7 +70,7 @@ export default function HeroSection() {
         <div className="mb-12 flex flex-col justify-center gap-4 sm:flex-row">
           <div
             onClick={handleCopyEmail}
-            className={`flex cursor-pointer items-center rounded-md border border-gray-600 px-4 transition-colors hover:bg-red-300 hover:text-red-800 ${emailCopied ? "bg-green-400 hover:bg-green-500" : ""}`}
+            className={`flex cursor-pointer items-center justify-center rounded-md border border-gray-600 bg-transparent px-3 py-1 text-center hover:bg-red-300 hover:text-red-800 ${emailCopied ? "bg-green-400 hover:bg-green-500" : ""}`}
           >
             <Mail className="mr-2 h-5 w-5" />
             {emailCopied ? "Email Copied!" : "fredi1574@gmail.com"}

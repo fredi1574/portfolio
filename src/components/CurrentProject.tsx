@@ -110,7 +110,7 @@ export default function CurrentProject() {
                 ))}
               </div>
 
-              <div className="flex flex-wrap justify-center gap-4 sm:justify-start">
+              <div className="flex gap-4 sm:justify-center md:justify-start">
                 <Button
                   onClick={() =>
                     handleGithubRepo("https://github.com/fredi1574/CoWorkly")
