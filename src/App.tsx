@@ -1,5 +1,6 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
+import CurrentProject from "./components/CurrentProject";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
@@ -20,6 +21,9 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       <Projects />
+
+      {/* Current Project */}
+      <CurrentProject />
 
       {/* Skills Section */}
       <Skills />

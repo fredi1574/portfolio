@@ -26,6 +26,12 @@ export default function Navbar() {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.2, color: "#3b82f6" }}
+              href="#current"
+            >
+              Current Project
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2, color: "#3b82f6" }}
               href="#skills"
             >
               Skills
