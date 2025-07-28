@@ -1,12 +1,28 @@
-import { ChevronDown, Github, Mail } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 
 export default function HeroSection() {
+  const [emailCopied, setEmailCopied] = useState<boolean>(false);
+
+  const handleLinkedin = () => {
+    window.open("https://www.linkedin.com/in/fredibulshtein/", "_blank");
+  };
+
   const handleGithub = () => {
     window.open("https://github.com/fredi1574", "_blank");
   };
 
+  const handleCopyEmail = async () => {
+    try {
+      navigator.clipboard.writeText("fredi1574@gmail");
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch (error) {
+      console.error("Failed to copy email:", error);
+    }
+  };
   return (
     <motion.section
       id="top"
@@ -47,17 +63,26 @@ export default function HeroSection() {
         </p>
 
         <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-400">
-          B.Sc. in Software Engineering • Passionate about building clean,
-          responsive, real-world web applications
+          B.Sc. in Software Engineering • Love building clean, responsive,
+          real-world web applications that solve real-world problems
         </p>
 
         <div className="mb-12 flex flex-col justify-center gap-4 sm:flex-row">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+          <div
+            onClick={handleCopyEmail}
+            className={`flex cursor-pointer items-center rounded-md border border-gray-600 px-4 transition-colors hover:bg-red-300 hover:text-red-800 ${emailCopied ? "bg-green-400 hover:bg-green-500" : ""}`}
           >
             <Mail className="mr-2 h-5 w-5" />
-            Get In Touch
+            {emailCopied ? "Email Copied!" : "fredi1574@gmail.com"}
+          </div>
+          <Button
+            onClick={handleLinkedin}
+            size="lg"
+            variant="outline"
+            className="border-gray-600 bg-transparent hover:bg-blue-400 hover:text-blue-800"
+          >
+            <Linkedin className="mr-2 h-5 w-5" />
+            LinkedIn Profile
           </Button>
           <Button
             onClick={handleGithub}
@@ -66,7 +91,7 @@ export default function HeroSection() {
             className="border-gray-600 bg-transparent hover:bg-gray-800"
           >
             <Github className="mr-2 h-5 w-5" />
-            View GitHub
+            GitHub Profile
           </Button>
         </div>
 

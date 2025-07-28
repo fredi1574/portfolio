@@ -22,9 +22,8 @@ export default function About() {
           >
             <p className="mb-6 text-lg leading-relaxed text-gray-300">
               I'm a passionate Full-Stack Developer with a B.Sc. in Software
-              Engineering from Braude College. I specialize in React, Next.js,
-              and TypeScript, creating modern web applications that solve
-              real-world problems.
+              Engineering. I specialize in React, Next.js, and TypeScript,
+              creating modern web applications that solve real-world problems.
             </p>
 
             <p className="mb-6 text-lg leading-relaxed text-gray-300">

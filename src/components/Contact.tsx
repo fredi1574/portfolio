@@ -67,7 +67,7 @@ export default function Contact() {
             onClick={handleLinkedin}
             size="lg"
             variant="outline"
-            className="border-gray-600 bg-transparent hover:bg-gray-800"
+            className="border-gray-600 bg-transparent hover:bg-blue-400 hover:text-blue-800"
           >
             <Linkedin className="mr-2 h-5 w-5" />
             LinkedIn

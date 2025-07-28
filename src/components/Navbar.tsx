@@ -10,7 +10,7 @@ export default function Navbar() {
           </div>
           <div className="hidden space-x-8 md:flex">
             <motion.a whileHover={{ scale: 1.2, color: "#3b82f6" }} href="#top">
-              Go to top
+              Back to top
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.2, color: "#3b82f6" }}
