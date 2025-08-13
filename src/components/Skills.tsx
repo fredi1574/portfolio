@@ -43,7 +43,7 @@ export default function Skills() {
             >
               <CardContent className="p-6 text-center">
                 <div className="mb-3 text-4xl transition-transform duration-300 group-hover:scale-130">
-                  {skill.icon}
+                  <skill.icon className={`mx-auto ${skill.color}`} />
                 </div>
                 <h3 className="mb-1 font-semibold text-white">{skill.name}</h3>
                 <p className="text-sm text-gray-400">{skill.category}</p>

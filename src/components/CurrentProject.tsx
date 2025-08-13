@@ -1,4 +1,4 @@
-import { Code, ExternalLink, Github } from "lucide-react";
+import { CodeXml, ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
@@ -95,7 +95,7 @@ export default function CurrentProject() {
 
             <CardContent className="text-left">
               <h3 className="mb-3 flex items-center gap-2 text-xl font-semibold text-white">
-                <Code className="h-5 w-5 text-purple-400" />
+                <CodeXml className="h-5 w-5 text-purple-400" />
                 Key Technologies:
               </h3>
               <div className="mb-6 flex flex-wrap gap-2">
