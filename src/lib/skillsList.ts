@@ -1,6 +1,6 @@
 import { FaReact } from "react-icons/fa";
 import { RiJavaFill, RiJavascriptFill } from "react-icons/ri";
-import { SiPostgresql } from "react-icons/si";
+import { SiMongodb, SiPostgresql } from "react-icons/si";
 import {
   TbBrandFirebase,
   TbBrandNextjs,
@@ -48,6 +48,12 @@ const skills = [
     icon: SiPostgresql,
     category: "Database",
     color: "text-sky-700",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    category: "Database",
+    color: "text-green-700",
   },
   {
     name: "Firebase",
