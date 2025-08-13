@@ -1,6 +1,5 @@
-import { CgCPlusPlus } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
-import { RiJavascriptFill, RiJavaFill } from "react-icons/ri";
+import { RiJavaFill, RiJavascriptFill } from "react-icons/ri";
 import { SiPostgresql } from "react-icons/si";
 import {
   TbBrandFirebase,
