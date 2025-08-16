@@ -53,13 +53,13 @@ export default function CurrentProject() {
     >
       <div className="mx-auto max-w-4xl text-center">
         <motion.h2 className="mb-16 text-4xl font-bold" variants={itemVariants}>
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">
             My Ongoing Project: CoWorkly
           </span>
         </motion.h2>
 
         <motion.div className="flex justify-center" variants={itemVariants}>
-          <Card className="group w-full max-w-2xl overflow-hidden border-gray-700 bg-gray-800/50 transition-all duration-300 hover:border-fuchsia-500/50">
+          <Card className="group w-full max-w-2xl overflow-hidden border-gray-700 bg-gray-800/50 transition-all duration-300 hover:border-blue-400/50">
             <div className="relative overflow-hidden p-6">
               <img
                 src="coworkly.png"
@@ -95,7 +95,7 @@ export default function CurrentProject() {
 
             <CardContent className="text-left">
               <h3 className="mb-3 flex items-center gap-2 text-xl font-semibold text-white">
-                <CodeXml className="h-5 w-5 text-purple-400" />
+                <CodeXml className="h-5 w-5 text-blue-400" />
                 Key Technologies:
               </h3>
               <div className="mb-6 flex flex-wrap gap-2">
@@ -103,7 +103,7 @@ export default function CurrentProject() {
                   <Badge
                     key={techIndex}
                     variant="outline"
-                    className="cursor-default border-gray-600 text-gray-300 transition-colors duration-300 hover:scale-110 hover:border-fuchsia-400 hover:text-fuchsia-300"
+                    className="cursor-default border-gray-600 text-gray-300 transition-colors duration-300 hover:scale-110 hover:border-blue-400 hover:text-blue-300"
                   >
                     {tech}
                   </Badge>
@@ -127,7 +127,7 @@ export default function CurrentProject() {
                     alert("Stay tuned! CoWorkly is in development.")
                   }
                   size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700"
+                  className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700"
                 >
                   <ExternalLink className="mr-2 h-5 w-5" />
                   View Progress

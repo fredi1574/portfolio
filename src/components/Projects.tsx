@@ -33,7 +33,7 @@ export default function Projects() {
     <section id="projects" className="bg-gray-900/50 px-4 py-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-16 text-center text-4xl font-bold">
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
             Featured Projects
           </span>
         </h2>
@@ -49,7 +49,7 @@ export default function Projects() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ border: "1px solid purple" }}
+              whileHover={{ border: "1px solid #3b82f6" }}
               className="group overflow-hidden rounded-lg border-gray-700 bg-gray-800/50 py-4 transition-all duration-300"
             >
               <div className="relative overflow-hidden">
@@ -99,7 +99,7 @@ export default function Projects() {
                   <Button
                     onClick={() => handleLiveRepo(project.live)}
                     size="sm"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900"
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Live Demo

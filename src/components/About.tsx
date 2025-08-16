@@ -8,7 +8,7 @@ export default function About() {
     <section id="about" className="px-4 py-20">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-16 text-center text-4xl font-bold">
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
             About Me
           </span>
         </h2>
@@ -64,7 +64,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-xl" />
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600/30 to-green-600/30 blur-xl" />
             <Card className="relative border-gray-700 bg-gray-800/50">
               <CardContent className="p-8">
                 <h3 className="mb-4 text-2xl font-bold text-blue-400">

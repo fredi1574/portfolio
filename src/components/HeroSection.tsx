@@ -31,7 +31,7 @@ export default function HeroSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="absolute inset-0 bg-radial-[at_25%_25%] from-blue-300/30 to-purple-700/40" />
+      <div className="absolute inset-0 bg-radial-[at_25%_25%] from-blue-300/40 to-blue-900/40" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
         <motion.div
@@ -40,7 +40,7 @@ export default function HeroSection() {
           transition={{ delay: 0.2, type: "spring", stiffness: 150 }}
           className="mb-8"
         >
-          <div className="mx-auto mb-6 h-32 w-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+          <div className="mx-auto mb-6 h-32 w-32 rounded-full bg-gradient-to-r from-blue-300 via-blue-600 to-blue-900 p-1">
             <div className="flex h-full w-full items-center justify-center rounded-full bg-gray-900">
               <span className="text-4xl font-bold">FB</span>
             </div>
@@ -53,7 +53,7 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="mb-6 text-5xl font-bold md:text-7xl"
         >
-          <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 bg-clip-text text-transparent">
             Fredi Bulshtein
           </span>
         </motion.h1>

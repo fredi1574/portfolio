@@ -32,7 +32,7 @@ export default function Contact() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mb-8 text-4xl font-bold"
         >
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
             Let's Work Together
           </span>
         </motion.h2>
@@ -58,7 +58,7 @@ export default function Contact() {
           <Button
             onClick={handleEmail}
             size="lg"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 transition-colors hover:from-blue-800 hover:to-purple-800"
+            className="bg-gradient-to-r from-blue-600 to-blue-800 transition-colors hover:from-blue-800 hover:to-blue-900"
           >
             <Mail className="mr-2 h-5 w-5" />
             Send Email

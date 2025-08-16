@@ -22,7 +22,7 @@ export default function Skills() {
     <section id="skills" className="px-4 py-20">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-16 text-center text-4xl font-bold">
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
             Tech Stack
           </span>
         </h2>
@@ -38,7 +38,7 @@ export default function Skills() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ scale: 1.02, border: "1px solid fuchsia" }}
+              whileHover={{ scale: 1.02, border: "1px solid darkslateblue" }}
               className="group rounded-lg border-gray-700 bg-gray-800/50 transition-all duration-300"
             >
               <CardContent className="p-6 text-center">
