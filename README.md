@@ -4,7 +4,7 @@ Welcome to my personal portfolio! This website showcases who I am, the projects 
 
 ## 🔗 Live Site
 
-➡️ [Visit My Portfolio](https://fredi-portfolio.vercel.app/)  
+➡️ [Visit My Portfolio](https://fredi1574.github.io/portfolio/)  
 
 ## 🚀 Features
 
