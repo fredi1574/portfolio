@@ -95,9 +95,13 @@ export default function HeroSection() {
           </Button>
         </div>
 
-        <a href="#about">
-          <ChevronDown className="mx-auto h-8 w-8 animate-bounce text-gray-400" />
-        </a>
+        <div className="flex justify-center">
+          <div className="max-w-8 rounded-3xl bg-gray-500/20 py-2 hover:bg-gray-500/40">
+            <a href="#about">
+              <ChevronDown className="mx-auto h-6 w-6 animate-bounce text-gray-300" />
+            </a>
+          </div>
+        </div>
       </div>
     </motion.section>
   );
