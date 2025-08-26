@@ -1,9 +1,28 @@
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { NAV_LINKS } from "../lib/constants";
+import { cn } from "../lib/utils";
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-gray-800 bg-black/30 backdrop-blur-lg">
+    <nav
+      className={cn(
+        "fixed top-0 z-50 w-full border-b border-transparent transition-all duration-300",
+        scrolled ? "border-gray-800 bg-black/50 backdrop-blur-lg" : "bg-transparent"
+      )}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <div className="bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-2xl font-bold text-transparent">
@@ -25,3 +44,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

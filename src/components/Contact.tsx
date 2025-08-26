@@ -45,32 +45,38 @@ export default function Contact() {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="flex flex-col justify-center gap-6 sm:flex-row"
         >
-          <Button
-            onClick={() => openUrl(`mailto:${EMAIL}`)}
-            size="lg"
-            className="bg-gradient-to-r from-blue-600 to-blue-800 transition-colors hover:from-blue-800 hover:to-blue-900"
-          >
-            <Mail className="mr-2 h-5 w-5" />
-            Send Email
-          </Button>
-          <Button
-            onClick={() => openUrl(LINKEDIN_URL)}
-            size="lg"
-            variant="outline"
-            className="border-gray-600 bg-transparent hover:bg-blue-400 hover:text-blue-800"
-          >
-            <Linkedin className="mr-2 h-5 w-5" />
-            LinkedIn
-          </Button>
-          <Button
-            onClick={() => openUrl(GITHUB_URL)}
-            size="lg"
-            variant="outline"
-            className="border-gray-600 bg-transparent hover:bg-gray-800"
-          >
-            <Github className="mr-2 h-5 w-5" />
-            GitHub Profile
-          </Button>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              onClick={() => openUrl(`mailto:${EMAIL}`)}
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-blue-800 transition-colors hover:from-blue-800 hover:to-blue-900"
+            >
+              <Mail className="mr-2 h-5 w-5" />
+              Send Email
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              onClick={() => openUrl(LINKEDIN_URL)}
+              size="lg"
+              variant="outline"
+              className="border-gray-600 bg-transparent hover:bg-blue-400 hover:text-blue-800"
+            >
+              <Linkedin className="mr-2 h-5 w-5" />
+              LinkedIn
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              onClick={() => openUrl(GITHUB_URL)}
+              size="lg"
+              variant="outline"
+              className="border-gray-600 bg-transparent hover:bg-gray-800"
+            >
+              <Github className="mr-2 h-5 w-5" />
+              GitHub Profile
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </motion.section>

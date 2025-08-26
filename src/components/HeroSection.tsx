@@ -1,22 +1,16 @@
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "../lib/constants";
+import { cn, openUrl } from "../lib/utils";
 import { Button } from "./ui/button";
 
 export default function HeroSection() {
   const [emailCopied, setEmailCopied] = useState<boolean>(false);
 
-  const handleLinkedin = () => {
-    window.open("https://www.linkedin.com/in/fredibulshtein/", "_blank");
-  };
-
-  const handleGithub = () => {
-    window.open("https://github.com/fredi1574", "_blank");
-  };
-
   const handleCopyEmail = async () => {
     try {
-      navigator.clipboard.writeText("fredi1574@gmail");
+      await navigator.clipboard.writeText(EMAIL);
       setEmailCopied(true);
       setTimeout(() => setEmailCopied(false), 2000);
     } catch (error) {
@@ -31,7 +25,7 @@ export default function HeroSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="absolute inset-0 bg-radial-[at_25%_25%] from-blue-300/40 to-blue-900/40" />
+      <div className="absolute inset-0 bg-radial-[at_25%_25%] from-cyan-400/40 via-blue-600/40 to-indigo-900/40" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
         <motion.div
@@ -68,31 +62,40 @@ export default function HeroSection() {
         </p>
 
         <div className="mb-12 flex flex-col justify-center gap-4 sm:flex-row">
-          <div
+          <motion.div
             onClick={handleCopyEmail}
-            className={`flex cursor-pointer items-center justify-center rounded-md border border-gray-600 bg-transparent px-3 py-1 text-center hover:bg-red-300 hover:text-red-800 ${emailCopied ? "bg-green-400 hover:bg-green-500" : ""}`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={cn(
+              "flex cursor-pointer items-center justify-center rounded-md border border-gray-600 bg-transparent px-3 py-1 text-center hover:bg-red-300 hover:text-red-800",
+              emailCopied && "bg-green-400 hover:bg-green-500"
+            )}
           >
             <Mail className="mr-2 h-5 w-5" />
-            {emailCopied ? "Email Copied!" : "fredi1574@gmail.com"}
-          </div>
-          <Button
-            onClick={handleLinkedin}
-            size="lg"
-            variant="outline"
-            className="border-gray-600 bg-transparent hover:bg-blue-400 hover:text-blue-800"
-          >
-            <Linkedin className="mr-2 h-5 w-5" />
-            LinkedIn Profile
-          </Button>
-          <Button
-            onClick={handleGithub}
-            size="lg"
-            variant="outline"
-            className="border-gray-600 bg-transparent hover:bg-gray-800"
-          >
-            <Github className="mr-2 h-5 w-5" />
-            GitHub Profile
-          </Button>
+            {emailCopied ? "Email Copied!" : EMAIL}
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              onClick={() => openUrl(LINKEDIN_URL)}
+              size="lg"
+              variant="outline"
+              className="border-gray-600 bg-transparent hover:bg-blue-400 hover:text-blue-800"
+            >
+              <Linkedin className="mr-2 h-5 w-5" />
+              LinkedIn Profile
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              onClick={() => openUrl(GITHUB_URL)}
+              size="lg"
+              variant="outline"
+              className="border-gray-600 bg-transparent hover:bg-gray-800"
+            >
+              <Github className="mr-2 h-5 w-5" />
+              GitHub Profile
+            </Button>
+          </motion.div>
         </div>
 
         <div className="flex justify-center">

@@ -28,7 +28,7 @@ export default function Projects() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ border: "1px solid #3b82f6" }}
+              whileHover={{ y: -5, border: "1px solid #3b82f6" }}
               className="group overflow-hidden rounded-lg border-gray-700 bg-gray-800/50 py-4 transition-all duration-300"
             >
               <div className="relative overflow-hidden">

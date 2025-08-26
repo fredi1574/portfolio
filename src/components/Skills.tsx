@@ -38,7 +38,7 @@ export default function Skills() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ scale: 1.02, border: "1px solid darkslateblue" }}
+              whileHover={{ y: -5, scale: 1.05, border: "1px solid #6366f1" }}
               className="group rounded-lg border-gray-700 bg-gray-800/50 transition-all duration-300"
             >
               <CardContent className="p-6 text-center">
