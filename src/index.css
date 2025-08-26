@@ -134,3 +134,22 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; /* slate-900 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1e40af; /* blue-800 */
+  border-radius: 20px;
+  border: 3px solid #0f172a; /* slate-900 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}

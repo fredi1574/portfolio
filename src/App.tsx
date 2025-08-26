@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import Skills from "./components/Skills";
 
 export default function Portfolio() {
@@ -33,6 +34,8 @@ export default function Portfolio() {
 
       {/* Footer */}
       <Footer />
+
+      <ScrollToTopButton />
     </div>
   );
 }
