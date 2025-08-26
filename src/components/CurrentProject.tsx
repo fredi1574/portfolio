@@ -1,5 +1,8 @@
 import { CodeXml, ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
+import { itemVariants, sectionVariants } from "../lib/animations";
+import { COWORKLY_URL } from "../lib/constants";
+import { openUrl } from "../lib/utils";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import {
@@ -11,28 +14,6 @@ import {
 } from "./ui/card";
 
 export default function CurrentProject() {
-  const handleGithubRepo = (url: string) => {
-    window.open(url, "_blank");
-  };
-
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   const techStack = [
     "Next.js",
     "React",
@@ -112,9 +93,7 @@ export default function CurrentProject() {
 
               <div className="flex gap-4 sm:justify-center md:justify-start">
                 <Button
-                  onClick={() =>
-                    handleGithubRepo("https://github.com/fredi1574/CoWorkly")
-                  }
+                  onClick={() => openUrl(COWORKLY_URL)}
                   size="lg"
                   variant="outline"
                   className="border-gray-600 bg-transparent text-white hover:bg-gray-700"

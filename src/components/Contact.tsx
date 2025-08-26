@@ -1,20 +1,10 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "../lib/constants";
+import { openUrl } from "../lib/utils";
 import { Button } from "./ui/button";
 
 export default function Contact() {
-  const handleLinkedin = () => {
-    window.open("https://www.linkedin.com/in/fredibulshtein/", "_blank");
-  };
-
-  const handleGithub = () => {
-    window.open("https://github.com/fredi1574", "_blank");
-  };
-
-  const handleEmail = () => {
-    window.open("mailto:fredi1574@gmail.com", "_blank");
-  };
-
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -56,7 +46,7 @@ export default function Contact() {
           className="flex flex-col justify-center gap-6 sm:flex-row"
         >
           <Button
-            onClick={handleEmail}
+            onClick={() => openUrl(`mailto:${EMAIL}`)}
             size="lg"
             className="bg-gradient-to-r from-blue-600 to-blue-800 transition-colors hover:from-blue-800 hover:to-blue-900"
           >
@@ -64,7 +54,7 @@ export default function Contact() {
             Send Email
           </Button>
           <Button
-            onClick={handleLinkedin}
+            onClick={() => openUrl(LINKEDIN_URL)}
             size="lg"
             variant="outline"
             className="border-gray-600 bg-transparent hover:bg-blue-400 hover:text-blue-800"
@@ -73,7 +63,7 @@ export default function Contact() {
             LinkedIn
           </Button>
           <Button
-            onClick={handleGithub}
+            onClick={() => openUrl(GITHUB_URL)}
             size="lg"
             variant="outline"
             className="border-gray-600 bg-transparent hover:bg-gray-800"

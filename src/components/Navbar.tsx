@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { NAV_LINKS } from "../lib/constants";
 
 export default function Navbar() {
   return (
@@ -9,39 +10,15 @@ export default function Navbar() {
             <a href="#top">Fredi</a>
           </div>
           <div className="hidden space-x-8 md:flex">
-            <motion.a whileHover={{ scale: 1.2, color: "#3b82f6" }} href="#top">
-              Back to top
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, color: "#3b82f6" }}
-              href="#about"
-            >
-              About
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, color: "#3b82f6" }}
-              href="#projects"
-            >
-              Projects
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, color: "#3b82f6" }}
-              href="#current"
-            >
-              Current Project
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, color: "#3b82f6" }}
-              href="#skills"
-            >
-              Skills
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, color: "#3b82f6" }}
-              href="#contact"
-            >
-              Contact
-            </motion.a>
+            {NAV_LINKS.map((link) => (
+              <motion.a
+                key={link.href}
+                whileHover={{ scale: 1.2, color: "#3b82f6" }}
+                href={link.href}
+              >
+                {link.label}
+              </motion.a>
+            ))}
           </div>
         </div>
       </div>

@@ -1,34 +1,13 @@
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
+import { containerVariants, itemVariants } from "../lib/animations";
 import projects from "../lib/projectList";
+import { openUrl } from "../lib/utils";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
 export default function Projects() {
-  const handleGithubRepo = (url: string) => {
-    window.open(url, "_blank");
-  };
-
-  const handleLiveRepo = (url: string) => {
-    window.open(url, "_blank");
-  };
-
   return (
     <section id="projects" className="bg-gray-900/50 px-4 py-20">
       <div className="mx-auto max-w-7xl">
@@ -88,7 +67,7 @@ export default function Projects() {
 
                 <div className="flex gap-3">
                   <Button
-                    onClick={() => handleGithubRepo(project.github)}
+                    onClick={() => openUrl(project.github)}
                     size="sm"
                     variant="outline"
                     className="border-gray-600 bg-transparent text-white hover:bg-gray-700"
@@ -97,7 +76,7 @@ export default function Projects() {
                     Code
                   </Button>
                   <Button
-                    onClick={() => handleLiveRepo(project.live)}
+                    onClick={() => openUrl(project.live)}
                     size="sm"
                     className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900"
                   >
